@@ -9,6 +9,6 @@ jobs:
    runs-on: ubuntu-latest
 
    steps:
-   - name: Greetings
+   - name: My Steps
      run: echo "Hello, this is first World!"
      
