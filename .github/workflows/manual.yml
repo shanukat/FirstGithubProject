@@ -6,12 +6,10 @@ on:
   inputs:
     employeeName:
       description: 'this is Emp Name field'
-      type: string
       default: 'test'
       required: true
     employeeAge:
       description: 'this is Emp Age field'
-      type: number
       required: true
 jobs:
   build-manual:
