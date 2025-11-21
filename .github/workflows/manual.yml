@@ -3,14 +3,14 @@ name: Manual WorkFlow
 
 on:
   workflow_dispatch:
-  inputs:
-    employeeName:
-      description: 'this is Emp Name field'
-      default: 'test'
-      required: true
-    employeeAge:
-      description: 'this is Emp Age field'
-      required: true
+    inputs:
+      employeeName:
+       description: 'this is Emp Name field'
+       default: 'test'
+       required: true
+      employeeAge:
+       description: 'this is Emp Age field'
+       required: true
 jobs:
   build-manual:
     runs-on: ubuntu-latest
