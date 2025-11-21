@@ -1,14 +1,16 @@
-Name: Manual WorkFlow
-On:
+name: Manual WorkFlow
+
+
+on:
   workflow_dispatch:
   inputs:
-  EmployeeName:
-    description: this is Emp Name field
+  employeeName:
+    description: 'this is Emp Name field'
     type: string
-    default: test
+    default: 'test'
     required: true
-  EmployeeAge:
-    description: this is Emp Age field
+  employeeAge:
+    description: 'this is Emp Age field'
     type: number
     required: true
 jobs:
@@ -16,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        run: echo "${{inputs.EmployeeName}}"
+        run: echo "${{inputs.employeeName}}"
