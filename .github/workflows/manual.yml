@@ -4,17 +4,27 @@ on:
   workflow_dispatch:
     inputs:
       employeeName:
-       description: 'Employee Name'
-       default: 'test'
-       required: true
-       type: string
+         description: 'Employee Name'
+         default: 'test'
+         required: true
+         type: string
       employeeAge:
-       description: 'Employee Age'
-       required: true
+         description: 'Employee Age'
+         required: true
       empAddress:
-       description: 'Employee Address'
-       required: true 
-       default: 'Penang'
+         description: 'Employee Address'
+         required: true 
+         default: 'Penang'
+      gender: 
+         description: 'Gender'
+         type: choice
+         required: true
+         options: 
+           - Male
+           - Female
+      married: 
+          description: 'Are you Married?'
+          type: boolean
        
 jobs:
   build-manual:
@@ -29,3 +39,8 @@ jobs:
           echo "Name: ${{ inputs.employeeName }}"
           echo "Age: ${{ inputs.employeeAge }}"
           echo "Address: ${{ inputs.empAddress }}"
+
+      - name: Gender
+        run: echo "Gender is ${{inputs.gender}}
+
+          
