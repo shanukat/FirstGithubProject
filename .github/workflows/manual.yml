@@ -42,8 +42,3 @@ jobs:
 
       - name: Gender
         run: echo "Gender is ${{ inputs.gender }}"
-
-      - name: Married
-        run: echo "Married: ${{ inputs.married }}"
-
-          
