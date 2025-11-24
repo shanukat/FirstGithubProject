@@ -13,7 +13,7 @@ on:
          required: true
       empAddress:
          description: 'Employee Address'
-         required: true 
+         required: true
          default: 'Penang'
       gender: 
          description: 'Gender'
@@ -41,6 +41,9 @@ jobs:
           echo "Address: ${{ inputs.empAddress }}"
 
       - name: Gender
-        run: echo "Gender is ${{inputs.gender}}
+        run: echo "Gender is ${{inputs.gender}}"
+
+      - name: married
+        run: echo "&{{inputs.married}}"
 
           
