@@ -22,7 +22,7 @@ on:
          options: 
            - Male
            - Female
-      married: 
+      married:
           description: 'Are you Married?'
           type: boolean
        
@@ -41,7 +41,7 @@ jobs:
           echo "Address: ${{ inputs.empAddress }}"
 
       - name: Gender
-        run: echo "Gender is ${{inputs.gender}}"
+        run: echo "Gender is ${{ inputs.gender }}"
 
       - name: Married
         run: echo "Married: ${{ inputs.married }}"
