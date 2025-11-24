@@ -7,6 +7,7 @@ on:
        description: 'Employee Name'
        default: 'test'
        required: true
+       type: string
       employeeAge:
        description: 'Employee Age'
        required: true
@@ -20,10 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: taking inputs
-        run: echo "Employee Details as follows..."${{inputs.employeeName}} ${{inputs.employeeAge}}" ${{inputs.empAddress}}"
+        run: echo "Employee Details as follows...${{inputs.employeeName}} ${{inputs.employeeAge}} ${{inputs.empAddress}}"
 
       - name: show separate line
         run :  |
           echo "Employee Details as follows.."
           echo "Name: ${{ inputs.employeeName }}"
           echo "Age: ${{ inputs.employeeAge }}"
+          echo "Address: ${{ inputs.empAddress }}"
