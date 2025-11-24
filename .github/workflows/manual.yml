@@ -5,15 +5,20 @@ on:
   workflow_dispatch:
     inputs:
       employeeName:
-       description: 'this is Emp Name field'
+       description: 'Employee Name'
        default: 'test'
        required: true
       employeeAge:
-       description: 'this is Emp Age field'
+       description: 'Employee Age'
        required: true
+      empAddress:
+       description: 'Employee Address'
+       required: true 
+       default: 'Penang'
+       
 jobs:
   build-manual:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: echo "${{inputs.employeeName}}"
+      - name: taking inputs
+        run: echo "Employee Details as follows.." + "${{inputs.employeeName}} + ${{inputs.employeeAge}}"
