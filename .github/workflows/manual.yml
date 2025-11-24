@@ -1,6 +1,5 @@
 name: Manual WorkFlow
 
-
 on:
   workflow_dispatch:
     inputs:
@@ -25,6 +24,6 @@ jobs:
 
       - name: show separate line
         run :  |
-        echo "Employee Details as follows.."
-        echo "Name: ${{ inputs.employeeName }}"
-        echo "Age: ${{ inputs.employeeAge }}"
+          echo "Employee Details as follows.."
+          echo "Name: ${{ inputs.employeeName }}"
+          echo "Age: ${{ inputs.employeeAge }}"
