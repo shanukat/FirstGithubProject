@@ -37,8 +37,8 @@ jobs:
         run :  |
           echo "Employee Details as follows.."
           echo "Name: ${{ inputs.employeeName }}"
-          echo "Age: ${{ inputs.employeeAge }}"
-          echo "Address: ${{ inputs.empAddress }}"
+          echo "Age = ${{ inputs.employeeAge }}"
+          echo "Address= ${{ inputs.empAddress }}"
 
       - name: Gender
         run: echo "Gender is ${{ inputs.gender }}"
