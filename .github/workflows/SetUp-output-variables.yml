@@ -3,6 +3,10 @@ name: setUp-output-variables-release
 on:
   push:
     branches: main
+    
+env:
+  var1: "shanuka"
+ 
 
 jobs:
   build-output:
@@ -12,15 +16,14 @@ jobs:
       - name: set output variables
         id: set-out
         shell: bash
-        run: echo "Name=ShanukaPerera" >> $GITHUB_OUTPUT
+        run: |
+         echo "Name=${{ env.var1 }}" >> $GITHUB_OUTPUT
+         echo "Age=37" >> $GITHUB_OUTPUT
 
-      - name: set output2 variables
-        id: set-out2
-        shell: bash
-        run: $Name=shan >> $GITHUB_OUTPUT
+     
 
       - name: access output
-        run: echo ${{ steps.set-out2.outputs.Name }}
+        run: echo "The value of Name is ${{ steps.set-out.outputs.Name }}"
        
       
     
