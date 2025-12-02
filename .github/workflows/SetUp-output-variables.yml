@@ -12,10 +12,15 @@ jobs:
       - name: set output variables
         id: set-out
         shell: bash
-        run: echo "Name:ShanukaPerera" >> $GITHUB_OUTPUT
+        run: echo "Name=ShanukaPerera" >> $GITHUB_OUTPUT
+
+      - name: set output2 variables
+        id: set-out2
+        shell: bash
+        run: $Name=shan >> $GITHUB_OUTPUT
 
       - name: access output
-        run: echo ${{ steps.set-out.outputs.Name }}
+        run: echo ${{ steps.set-out2.outputs.Name }}
        
       
     
