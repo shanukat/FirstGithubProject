@@ -12,7 +12,7 @@ jobs:
       - name: set output variables
         id: set-out
         shell: bash
-        run: echo "Name=Shanuka" >> $GITHUB_OUTPUT
+        run: echo "Name:ShanukaPerera" >> $GITHUB_OUTPUT
 
       - name: access output
         run: echo ${{ steps.set-out.outputs.Name }}
