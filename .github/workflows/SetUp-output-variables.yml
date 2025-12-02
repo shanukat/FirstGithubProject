@@ -1,0 +1,20 @@
+name: setUp-output-variables-release
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build-output:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: set output variables
+        id: set-out
+        run: echo "Name=Shanuka" >> $GITHUB_OUTPUT
+
+      - name: access output
+        run: echo &{{ steps.set-out.outputs.Name}}
+       
+      
+    
