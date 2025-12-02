@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: set output variables
         id: set-out
+        shell: bash
         run: echo "Name=Shanuka" >> $GITHUB_OUTPUT
 
       - name: access output
