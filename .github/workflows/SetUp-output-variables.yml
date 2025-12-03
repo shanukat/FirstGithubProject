@@ -7,6 +7,7 @@ on:
 env:
   EMP_NAME: "shanuka"
   EMP_AGE: 35
+  EMP-SALARY: 10000
  
 
 jobs:
@@ -20,11 +21,22 @@ jobs:
         run: |
          echo "name=${{ env.EMP_NAME }}" >> $GITHUB_OUTPUT
          echo "age=${{ env.EMP_AGE }}" >> $GITHUB_OUTPUT
+
+      - name: setoutput2 variables
+        id: set2
+        shell: bash
+        run: |
+          echo "salary=${{env.EMP-SALARY}}" >> $GITHUB_OUTPUT
          
       - name: access output
         run: |
          echo "The value of Name is ${{ steps.set-out.outputs.name }}"
          echo "The value of Age is ${{ steps.set-out.outputs.age }}"
+         echo "The value of Salary is ${{ steps.set2.outputs.salary }}"
+
+      - name: access output2
+        run: echo ${{steps.set2.outputs.salary}}
+      
        
       
     
