@@ -5,7 +5,8 @@ on:
     branches: main
     
 env:
-  var1: "shanuka"
+  EMP_NAME: "shanuka"
+  EMP_AGE: 35
  
 
 jobs:
@@ -17,13 +18,13 @@ jobs:
         id: set-out
         shell: bash
         run: |
-         echo "Name=${{ env.var1 }}" >> $GITHUB_OUTPUT
-         echo "Age=37" >> $GITHUB_OUTPUT
-
-     
-
+         echo "name=${{ env.EMP_NAME }}" >> $GITHUB_OUTPUT
+         echo "age=${{ env.EMP_AGE }}" >> $GITHUB_OUTPUT
+         
       - name: access output
-        run: echo "The value of Name is ${{ steps.set-out.outputs.Name }}"
+        run: |
+         echo "The value of Name is ${{ steps.set-out.outputs.name }}"
+         echo "The value of Age is ${{ steps.set-out.outputs.age }}"
        
       
     
