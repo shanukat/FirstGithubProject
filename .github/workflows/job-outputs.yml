@@ -1,0 +1,33 @@
+name: Job level output variables
+
+on:
+ push:
+  branches: main
+
+jobs:
+  job1:
+     runs-on: ubuntu-latest
+   
+     outputs:
+       name_output_variable: ${{steps.set-out1.outputs.name}}
+
+
+     steps:
+       - name: set outputs
+         id: set-out1
+         run: echo "name= Shanuka Perera" >> $GITHUB_OUTPUT
+
+
+  job2:
+     runs-on: ubuntu-latest 
+     needs: job1
+     steps:
+        - name : access output
+          run: echo "Value of output from job1 is ${{needs.job1.outputs.name_output_variable}}"
+      
+    
+
+       
+
+   
+  
