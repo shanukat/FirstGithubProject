@@ -15,7 +15,9 @@ jobs:
      steps:
        - name: set outputs
          id: set-out1
-         run: echo "name= Shanuka Perera" >> $GITHUB_OUTPUT
+         env:
+          emp-name: "Shanuka Perer"
+         run: echo "name=${{env.emp-name}}" >> $GITHUB_OUTPUT
 
 
   job2:
