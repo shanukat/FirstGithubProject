@@ -29,10 +29,10 @@ jobs:
           run: echo "Value of output from job1 is ${{needs.job1.outputs.name_output_variable}}"
 
         - name: Access Repository variable
-          run: echo "Repo Var is ${{vars.DBUSERNAME}}
+          run: echo "Repo Var is ${{vars.DBUSERNAME}}"
 
         - name: Access Repository secret
-          run: echo "Repo sec is ${{secrets.DBPASSWORD}}
+          run: echo "Repo sec is ${{secrets.DBPASSWORD}}"
 
           
       
