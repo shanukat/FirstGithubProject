@@ -22,7 +22,9 @@ jobs:
 
      steps:
       - name: Deploy to Stag
-        run: echo "Deploying to Staging environment"
+        run: |
+         echo "UserName = ${{vars.USERNAME}}
+         echo "Deploying to Staging environment"
 
 
   Prod-job:
@@ -32,4 +34,6 @@ jobs:
 
      steps:
       - name: Deploy to Prod
-        run: echo "Deploying to Production environment"
+        run: |
+         echo "UserName = ${{vars.USERNAME}}
+         echo "Deploying to Production environment"
