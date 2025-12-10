@@ -24,6 +24,7 @@ jobs:
       - name: Deploy to Stag
         run: |
          echo "UserName = ${{vars.USERNAME}}"
+         echo "password = ${{secrets.PASSWORD}}"
          echo "Deploying to Staging environment"
 
 
@@ -36,4 +37,5 @@ jobs:
       - name: Deploy to Prod
         run: |
          echo "UserName = ${{vars.USERNAME}}"
+         echo "password = ${{secrets.PASSWORD}}"
          echo "Deploying to Production environment"
