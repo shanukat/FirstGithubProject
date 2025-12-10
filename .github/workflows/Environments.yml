@@ -9,6 +9,7 @@ on:
 jobs: 
   Dev-job:
     runs-on: ubuntu-latest
+    environment: DEV
 
     steps:
       - name: Deploy to Dev
@@ -16,6 +17,7 @@ jobs:
 
   Stag-job:
      runs-on: ubuntu-latest
+     environment: Stag
      needs: Dev-job
 
      steps:
@@ -25,6 +27,7 @@ jobs:
 
   Prod-job:
      runs-on: ubuntu-latest
+     environment: Prod
      needs: Stag-job
 
      steps:
