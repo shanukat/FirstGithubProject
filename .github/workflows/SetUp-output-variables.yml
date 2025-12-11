@@ -27,6 +27,8 @@ jobs:
         shell: bash
         run: |
           echo "salary=${{env.EMP-SALARY}}" >> $GITHUB_OUTPUT
+          $workspace = "${{ github.workspace }}"
+          echo "workspace is $workspace"
          
       - name: access output
         run: |
