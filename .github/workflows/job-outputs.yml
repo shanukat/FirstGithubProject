@@ -18,6 +18,7 @@ jobs:
          env:
           emp-name: "Shanuka Perer"
          run: echo "name=${{env.emp-name}}" >> $GITHUB_OUTPUT
+         
 
 
   job2:
@@ -29,7 +30,10 @@ jobs:
           run: echo "Value of output from job1 is ${{needs.job1.outputs.name_output_variable}}"
 
         - name: Access Repository variable
-          run: echo "Repo Var is ${{vars.DBUSERNAME}}"
+          
+          run: |
+            echo "Repo Var is ${{vars.DBUSERNAME}}"
+            $workspace = "${{ github.workspace }}"
 
         - name: Access Repository secret
           run: echo "Repo sec is ${{secrets.DBPASSWORD}}"
