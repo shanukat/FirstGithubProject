@@ -38,4 +38,5 @@ jobs:
         run: |
          echo "UserName = ${{vars.USERNAME}}"
          echo "password = ${{secrets.PASSWORD}}"
+         echo "api token is ${{secrets.PRODTOKEN}}"
          echo "Deploying to Production environment"
